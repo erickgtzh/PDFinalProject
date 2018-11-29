@@ -16,7 +16,7 @@ namespace PDFinalProject
 {
     public partial class OrderGenerator : Form
     {
-        List<Order> orders = new List<Order>();
+        public static List<Order> orders = new List<Order>();
         Product product1;
         Product product2;
         Product product3;
@@ -37,6 +37,11 @@ namespace PDFinalProject
                 filesFound.AddRange(Directory.GetFiles(searchFolder, String.Format("*.{0}", filter), searchOption));
             }
             return filesFound.ToArray();
+        }
+
+        public List<Order> getOrder()
+        {
+            return orders;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -301,6 +306,10 @@ namespace PDFinalProject
 
         private void button_simulation_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Transportation transportation = new Transportation();
+            transportation.ShowDialog();
+            this.Show();
 
         }
 
@@ -308,6 +317,11 @@ namespace PDFinalProject
         {
             textBox1.Text = logger.LoggingString;
             dataGridView_binnacle.DataSource = logger.loggingTable;
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
