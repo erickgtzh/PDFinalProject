@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 
-namespace PDFinalProject
+namespace LoggerNamespace
 {
     /// <summary>
     /// The logger singleton class
@@ -11,6 +12,18 @@ namespace PDFinalProject
         #region Class fields
 
         // this field holds the logger instance
+        private int contfile;
+        private int contbox;
+        private int contable;
+        public int Contfile { get => contfile; set => contfile = value; }
+        public int Contable { get => contable; set => contable = value; }
+        public int Contbox { get => contbox; set => contbox = value; }
+
+        private string loggingString = "";
+        public string LoggingString { get => loggingString; set => loggingString = value; }
+
+        public DataTable loggingTable = new DataTable();
+        
         private static Logger _instance = null;
 
         // this field holds the log file stream
@@ -30,8 +43,9 @@ namespace PDFinalProject
         /// <remarks>Note that the constructor is protected which makes it inaccessible to clients.</remarks>
         protected Logger()
         {
+            this.loggingTable.Columns.Add();
             logStream = File.Open("logfile.log", FileMode.Create);
-            streamWriter = new StreamWriter(logStream);
+            streamWriter = new StreamWriter(logStream); 
         }
 
         /// <summary>
@@ -40,8 +54,19 @@ namespace PDFinalProject
         /// <param name="message">The message to log.</param>
         public void Log(string message)
         {
-            streamWriter.Write(message);
-            streamWriter.Write(Environment.NewLine);
+            for(int i = 0; i < contfile; i++)
+            {
+                streamWriter.Write(message);
+                streamWriter.Write(Environment.NewLine);
+            }
+            for(int i = 0; i < contable; i++)
+            {
+                loggingTable.Rows.Add(message);
+            }
+            for(int i  = 0; i < contbox; i++)
+            {
+                LoggingString += message + "\n";
+            }
         }
 
         /// <summary>
@@ -81,6 +106,8 @@ namespace PDFinalProject
                 return _instance;
             }
         }
+
+        
     }
 
 }

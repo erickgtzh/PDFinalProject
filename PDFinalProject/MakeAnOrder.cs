@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoggerNamespace;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace PDFinalProject
         private int quantity1;
         private int quantity2;
         private int quantity3;
+        Logger logger = Logger.Instance;
 
         public MakeAnOrder(int quantity1, int quantity2, int quantity3)
         {
@@ -53,7 +55,8 @@ namespace PDFinalProject
             Quantity1 = Convert.ToInt32(textBox_frozen_veg.Text);
             Quantity2 = Convert.ToInt32(textBox_sodas.Text);
             Quantity3 = Convert.ToInt32(textBox_bread.Text);
-
+            this.logger.Log("Se han creado productos");
+            this.logger.Log("Pedido finalizado");
             this.Hide();
         }
     }

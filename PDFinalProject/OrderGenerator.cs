@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LoggerNamespace;
 using QRCodeEncoderDecoderLibrary;
 
 namespace PDFinalProject
@@ -20,6 +21,7 @@ namespace PDFinalProject
         Product product2;
         Product product3;
         Order order;
+        Logger logger = Logger.Instance;
 
         public OrderGenerator()
         {
@@ -39,8 +41,8 @@ namespace PDFinalProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //String json = createJson(0,"TestMarket",new int[]{ 0,0,0});
-            //Encoder("TestMarket", json);
+            String json = createJson(0, "TestMarket", new int[] { 0, 0, 0 });
+            Encoder("TestMarket", json);
             Decoder();
         }
 
@@ -97,11 +99,12 @@ namespace PDFinalProject
                 QRCodeImage.Save(FS, ImageFormat.Png);
             }
             //FS.Dispose();
-            
+
 
             //MessageBox.Show(name+".png"+" saved.");
 
             //Console.WriteLine("Close");
+            logger.Log("Imagen creada");
         }
 
         public void Decoder()
@@ -279,6 +282,32 @@ namespace PDFinalProject
                 //makeAnOrder.setValues();    
                 this.Show();
             }
+        }
+
+        private void File_Click(object sender, EventArgs e)
+        {
+            logger.Contfile++;
+        }
+
+        private void DataGrid_Click(object sender, EventArgs e)
+        {
+            logger.Contable++;
+        }
+
+        private void Textbox_Click(object sender, EventArgs e)
+        {
+            logger.Contbox++;
+        }
+
+        private void button_simulation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void actualizar_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = logger.LoggingString;
+            dataGridView_binnacle.DataSource = logger.loggingTable;
         }
     }
 }
