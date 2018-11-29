@@ -59,5 +59,10 @@ namespace PDFinalProject
             this.logger.Log("Pedido finalizado");
             this.Hide();
         }
+
+        private void MakeAnOrder_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
