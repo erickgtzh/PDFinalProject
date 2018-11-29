@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PDFinalProject
 {
-    class Order
+    public class Order
     {
         private int idStore;
         private String storeName;

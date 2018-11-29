@@ -114,8 +114,10 @@
             this.Controls.Add(this.lbl_bread);
             this.Controls.Add(this.lbl_sodas);
             this.Controls.Add(this.lbl_frozen_veg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MakeAnOrder";
             this.Text = "MakeAnOrder";
+            this.Load += new System.EventHandler(this.MakeAnOrder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

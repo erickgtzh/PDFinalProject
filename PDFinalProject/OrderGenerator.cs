@@ -15,15 +15,22 @@ namespace PDFinalProject
 {
     public partial class OrderGenerator : Form
     {
-        List<Order> orders = new List<Order>();
+        private static List<Order> orders = new List<Order>();
         Product product1;
         Product product2;
         Product product3;
         Order order;
 
+        public static List<Order> Orders { get => orders; set => orders = value; }
+
         public OrderGenerator()
         {
             InitializeComponent();
+        }
+
+        public List<Order> getOrder()
+        {
+            return orders;
         }
 
         public static String[] GetFilesFrom(String searchFolder, String[] filters, bool isRecursive)
@@ -279,6 +286,15 @@ namespace PDFinalProject
                 //makeAnOrder.setValues();    
                 this.Show();
             }
+        }
+
+        private void button_simulation_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Transportation transportation = new Transportation();
+            transportation.ShowDialog();
+            this.Show();
+
         }
     }
 }

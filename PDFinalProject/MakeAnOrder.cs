@@ -56,5 +56,10 @@ namespace PDFinalProject
 
             this.Hide();
         }
+
+        private void MakeAnOrder_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

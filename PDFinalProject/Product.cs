@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PDFinalProject
 {
-    class Product
+    public class Product
     {
         private int idProduct;
         private String name;
