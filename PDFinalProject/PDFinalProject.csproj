@@ -70,6 +70,12 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transportation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transportation.Designer.cs">
+      <DependentUpon>Transportation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="OrderGenerator.resx">
       <DependentUpon>OrderGenerator.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transportation.resx">
+      <DependentUpon>Transportation.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

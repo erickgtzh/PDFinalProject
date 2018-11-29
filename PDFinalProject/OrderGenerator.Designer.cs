@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridView_binnacle = new System.Windows.Forms.DataGridView();
+            this.button_simulation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_binnacle)).BeginInit();
             this.SuspendLayout();
@@ -64,16 +65,26 @@
             this.dataGridView_binnacle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_binnacle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_binnacle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView_binnacle.Location = new System.Drawing.Point(714, 0);
+            this.dataGridView_binnacle.Location = new System.Drawing.Point(816, 0);
             this.dataGridView_binnacle.Name = "dataGridView_binnacle";
-            this.dataGridView_binnacle.Size = new System.Drawing.Size(286, 349);
+            this.dataGridView_binnacle.Size = new System.Drawing.Size(184, 349);
             this.dataGridView_binnacle.TabIndex = 1;
+            // 
+            // button_simulation
+            // 
+            this.button_simulation.Location = new System.Drawing.Point(664, 30);
+            this.button_simulation.Name = "button_simulation";
+            this.button_simulation.Size = new System.Drawing.Size(91, 42);
+            this.button_simulation.TabIndex = 2;
+            this.button_simulation.Text = "Simulation";
+            this.button_simulation.UseVisualStyleBackColor = true;
             // 
             // OrderGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 349);
+            this.Controls.Add(this.button_simulation);
             this.Controls.Add(this.dataGridView_binnacle);
             this.Controls.Add(this.dataGridView);
             this.Name = "OrderGenerator";
@@ -89,6 +100,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridView dataGridView_binnacle;
+        private System.Windows.Forms.Button button_simulation;
     }
 }
 
