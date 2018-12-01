@@ -71,7 +71,6 @@ namespace PDFinalProject
             //Cada camión contará con 270 piezas de pan por surtir.
             //Cada camión cuenta con 95 bolsas de 1 Kg de verdura
         }
-
         private void button_save_Click(object sender, EventArgs e)
         {
 
