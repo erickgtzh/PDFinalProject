@@ -44,8 +44,10 @@ namespace LoggerNamespace
         protected Logger()
         {
             this.loggingTable.Columns.Add();
-            logStream = File.Open("logfile.log", FileMode.Create);
-            streamWriter = new StreamWriter(logStream); 
+
+            //Modified
+            //logStream = File.Open("logfile.log", FileMode.Create);
+            //streamWriter = new StreamWriter(logStream); 
         }
 
         /// <summary>
@@ -56,16 +58,25 @@ namespace LoggerNamespace
         {
             for(int i = 0; i < contfile; i++)
             {
-                streamWriter.Write(message);
-                streamWriter.Write(Environment.NewLine);
+                using (StreamWriter file =
+                    new System.IO.StreamWriter(@"logfile.log", true))
+                {
+                    file.WriteLine(message);
+                }
+
+                //Modified
+                //streamWriter.Write(message);
+                //streamWriter.Write(Environment.NewLine);
             }
-            for(int i = 0; i < contable; i++)
+            for (int i = 0; i < contable; i++)
             {
                 loggingTable.Rows.Add(message);
             }
             for(int i  = 0; i < contbox; i++)
             {
-                LoggingString += message + "\n";
+                LoggingString += message + Environment.NewLine;
+                //Modified
+                //LoggingString += message + "\n";
             }
         }
 
