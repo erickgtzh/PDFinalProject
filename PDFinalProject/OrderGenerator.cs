@@ -16,6 +16,7 @@ namespace PDFinalProject
 {
     public partial class OrderGenerator : Form
     {
+
         public static List<Order> orders = new List<Order>();
         Product product1;
         Product product2;
@@ -26,6 +27,7 @@ namespace PDFinalProject
         public OrderGenerator()
         {
             InitializeComponent();
+            //RefreshList(orders);
         }
 
         public static String[] GetFilesFrom(String searchFolder, String[] filters, bool isRecursive)
@@ -44,18 +46,24 @@ namespace PDFinalProject
             return orders;
         }
 
+        public void setOrder(List<Order> _orders)
+        {
+            orders = _orders;
+            AddButtons();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            String json = createJson(0, "TestMarket", new int[] { 0, 0, 0 });
-            Encoder("TestMarket", json);
+            //String json = createJson(0, "TestMarket", new int[] { 0, 0, 0 });
+            //Encoder("TestMarket", json);
             Decoder();
         }
 
-        private String createJson(int idStore,String storeName,int[] products)
+        public String createJson(int idStore, String storeName, int[] products)
         {
             String json = "";
-            if(products[0] == 0 && products[1] == 0 && products[2] == 0)
-                json = "[\n{\n\t\"idStore\": \""+idStore+ "\",\n\t\"storeName\": \"" + storeName+ "\",\n\t\"products\": []\n}\n]";
+            if (products[0] == 0 && products[1] == 0 && products[2] == 0)
+                json = "[\n{\n\t\"idStore\": \"" + idStore + "\",\n\t\"storeName\": \"" + storeName + "\",\n\t\"products\": []\n}\n]";
             else
                 json = "[\n{\n\t\"idStore\": \"" + idStore + "\",\n\t\"storeName\": \"" + storeName + "\",\n\t\"products\": [" +
                     //Frozen vegetables
@@ -85,26 +93,24 @@ namespace PDFinalProject
             return json;
         }
 
-        public void Encoder(String name,String json)
+        public void Encoder(String name, String json)
         {
             //Console.WriteLine("Open");
             String path = @"Markets//" + name + ".png";
             QREncoder QRCodeEncoder = new QREncoder();
             QRCodeEncoder.Encode(ErrorCorrection.M, json);
-            Bitmap QRCodeImage = QRCodeToBitmap.CreateBitmap(QRCodeEncoder, 4, 8);
+            Bitmap QRCodeImage = new Bitmap(QRCodeToBitmap.CreateBitmap(QRCodeEncoder, 4, 8));
+            //System.IO.File.Delete(path);
 
-            //File.Delete(@"Markets//" + name + ".png");
             //if (File.Exists(path))
             //{
             //    File.Delete(path);
             //}
             //FileShare.Write(@"Markets//" + name + ".png",FileMode.Create);
-            using(FileStream FS = new FileStream(@"Markets//"+name+".png", FileMode.Create))
+            using (FileStream FS = new FileStream(path, FileMode.Create))
             {
                 QRCodeImage.Save(FS, ImageFormat.Png);
             }
-            //FS.Dispose();
-
 
             //MessageBox.Show(name+".png"+" saved.");
 
@@ -115,7 +121,7 @@ namespace PDFinalProject
         public void Decoder()
         {
             QREncoder QRCodeEncoder = new QREncoder();
-            Bitmap QRCodeImage = QRCodeToBitmap.CreateBitmap(QRCodeEncoder, 4, 8);
+            Bitmap QRCodeImage = new Bitmap(QRCodeToBitmap.CreateBitmap(QRCodeEncoder, 4, 8));
             QRDecoder QRCodeDecoder = new QRDecoder();
             String quantities = "";
             int[] q_products = new int[3];
@@ -129,7 +135,7 @@ namespace PDFinalProject
             foreach (var i in files)
             {
                 byte[][] DataByteArray = QRCodeDecoder.ImageDecoder((Bitmap)Image.FromFile(i));
-                
+
                 String Result = QRCode.ByteArrayToStr(DataByteArray[0]);
 
                 String aux = "";
@@ -140,7 +146,6 @@ namespace PDFinalProject
 
                 for (int chari = 0; chari < Result.Length; chari++)
                 {
-
                     if (Result[chari] != ']')
                     {
                         if (Result[chari] == ':')
@@ -181,7 +186,10 @@ namespace PDFinalProject
                                     {
                                         int op = quantities.IndexOf(quantity);
                                         int com = quantities.IndexOf("}");
-                                        q_products[checar] = Convert.ToInt32(quantities.Substring(op + quantity.Length, com - op - quantity.Length));
+                                        if (quantity.Length <= Convert.ToInt32(quantities.Substring(op + quantity.Length, com - op - quantity.Length)))
+                                            q_products[checar] = 0;
+                                        else
+                                            q_products[checar] = Convert.ToInt32(quantities.Substring(op + quantity.Length, com - op - quantity.Length));
 
                                         quantities = quantities.Substring(com + 1);
                                         checar++;
@@ -223,7 +231,7 @@ namespace PDFinalProject
 
                 //RefreshList(orders);
                 RefreshList(orders);
-                
+
                 //MessageBox.Show(Convert.ToString(id));
                 //MessageBox.Show(Result);
                 //MessageBox.Show(p_name);
@@ -252,7 +260,8 @@ namespace PDFinalProject
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex==2)
+            //MessageBox.Show(Convert.ToString(e.ColumnIndex));
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 1 || e.ColumnIndex == 0)
             {
                 //MessageBox.Show(Convert.ToString(e.RowIndex));
                 this.Hide();
@@ -309,8 +318,11 @@ namespace PDFinalProject
             this.Hide();
             Transportation transportation = new Transportation();
             transportation.ShowDialog();
+            //dataGridView.Clear();
+            //dataGridView.Rows.Clear();
+            //dataGridView.Refresh();
+            RefreshList(orders);
             this.Show();
-
         }
 
         private void actualizar_Click(object sender, EventArgs e)

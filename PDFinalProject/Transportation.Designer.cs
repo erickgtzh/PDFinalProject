@@ -33,7 +33,7 @@ namespace PDFinalProject
             this.label_frozen_veg_transp = new System.Windows.Forms.Label();
             this.label_sodas_transp = new System.Windows.Forms.Label();
             this.label_bread_transp = new System.Windows.Forms.Label();
-            this.button_save = new System.Windows.Forms.Button();
+            this.button_start_simulation = new System.Windows.Forms.Button();
             this.comboBox_frozen_veg_buses = new System.Windows.Forms.ComboBox();
             this.comboBox_sodas_buses = new System.Windows.Forms.ComboBox();
             this.comboBox_bread_buses = new System.Windows.Forms.ComboBox();
@@ -69,16 +69,16 @@ namespace PDFinalProject
             this.label_bread_transp.TabIndex = 4;
             this.label_bread_transp.Text = "Bread buses:";
             // 
-            // button_save
+            // button_start_simulation
             // 
-            this.button_save.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.button_save.Location = new System.Drawing.Point(326, 319);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(89, 44);
-            this.button_save.TabIndex = 6;
-            this.button_save.Text = "Save";
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            this.button_start_simulation.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.button_start_simulation.Location = new System.Drawing.Point(326, 319);
+            this.button_start_simulation.Name = "button_start_simulation";
+            this.button_start_simulation.Size = new System.Drawing.Size(110, 50);
+            this.button_start_simulation.TabIndex = 6;
+            this.button_start_simulation.Text = "Start Simulation";
+            this.button_start_simulation.UseVisualStyleBackColor = true;
+            this.button_start_simulation.Click += new System.EventHandler(this.button_save_Click);
             // 
             // comboBox_frozen_veg_buses
             // 
@@ -100,7 +100,6 @@ namespace PDFinalProject
             this.comboBox_frozen_veg_buses.Name = "comboBox_frozen_veg_buses";
             this.comboBox_frozen_veg_buses.Size = new System.Drawing.Size(121, 29);
             this.comboBox_frozen_veg_buses.TabIndex = 1;
-            this.comboBox_frozen_veg_buses.Text = "0";
             // 
             // comboBox_sodas_buses
             // 
@@ -122,7 +121,6 @@ namespace PDFinalProject
             this.comboBox_sodas_buses.Name = "comboBox_sodas_buses";
             this.comboBox_sodas_buses.Size = new System.Drawing.Size(121, 29);
             this.comboBox_sodas_buses.TabIndex = 3;
-            this.comboBox_sodas_buses.Text = "0";
             // 
             // comboBox_bread_buses
             // 
@@ -144,7 +142,6 @@ namespace PDFinalProject
             this.comboBox_bread_buses.Name = "comboBox_bread_buses";
             this.comboBox_bread_buses.Size = new System.Drawing.Size(121, 29);
             this.comboBox_bread_buses.TabIndex = 5;
-            this.comboBox_bread_buses.Text = "0";
             // 
             // Transportation
             // 
@@ -154,7 +151,7 @@ namespace PDFinalProject
             this.Controls.Add(this.comboBox_bread_buses);
             this.Controls.Add(this.comboBox_sodas_buses);
             this.Controls.Add(this.comboBox_frozen_veg_buses);
-            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.button_start_simulation);
             this.Controls.Add(this.label_bread_transp);
             this.Controls.Add(this.label_sodas_transp);
             this.Controls.Add(this.label_frozen_veg_transp);
@@ -165,6 +162,9 @@ namespace PDFinalProject
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            comboBox_frozen_veg_buses.Text = "0";
+            comboBox_sodas_buses.Text = "0";
+            comboBox_bread_buses.Text = "0";
         }
 
         #endregion
@@ -172,7 +172,7 @@ namespace PDFinalProject
         private System.Windows.Forms.Label label_frozen_veg_transp;
         private System.Windows.Forms.Label label_sodas_transp;
         private System.Windows.Forms.Label label_bread_transp;
-        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_start_simulation;
         private System.Windows.Forms.ComboBox comboBox_frozen_veg_buses;
         private System.Windows.Forms.ComboBox comboBox_sodas_buses;
         private System.Windows.Forms.ComboBox comboBox_bread_buses;

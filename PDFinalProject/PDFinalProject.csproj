@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D1A166C7-37AA-4282-BFF3-AADD79C666DA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>PDFinalProject</RootNamespace>
     <AssemblyName>PDFinalProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
@@ -52,8 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AvailabilityProductsValidator.cs" />
     <Compile Include="DataConverter.cs" />
+    <Compile Include="InsufficientBusesValidator.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="NumberOfBusesValidator.cs" />
     <Compile Include="OrderGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,12 +73,20 @@
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Simulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Simulation.Designer.cs">
+      <DependentUpon>Simulation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transportation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transportation.Designer.cs">
       <DependentUpon>Transportation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validator.cs" />
+    <Compile Include="ValidatorDirector.cs" />
     <EmbeddedResource Include="OrderGenerator.resx">
       <DependentUpon>OrderGenerator.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Simulation.resx">
+      <DependentUpon>Simulation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transportation.resx">
       <DependentUpon>Transportation.cs</DependentUpon>
     </EmbeddedResource>
