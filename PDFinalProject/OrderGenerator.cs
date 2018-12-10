@@ -54,8 +54,8 @@ namespace PDFinalProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String json = createJson(0, "TestMarket", new int[] { 0, 0, 0 });
-            Encoder("TestMarket", json);
+            //String json = createJson(0, "TestMarket", new int[] { 0, 0, 0 });
+            //Encoder("TestMarket", json);
             Decoder();
         }
 
@@ -101,13 +101,11 @@ namespace PDFinalProject
             QREncoder QRCodeEncoder = new QREncoder();
             Bitmap QRCodeImage = new Bitmap(QRCodeToBitmap.CreateBitmap(QRCodeEncoder, 4, 8));
             QRDecoder QRCodeDecoder = new QRDecoder();
-            String quantities = "";
             int[] q_products = new int[3];
 
             String searchFolder = @"Markets";
             var filters = new String[] { "png" };
             var files = GetFilesFrom(searchFolder, filters, false);
-            String quantity = "\"quantity\": ";
 
             foreach (var i in files)
             {

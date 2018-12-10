@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoggerNamespace;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,8 @@ namespace PDFinalProject
     public partial class Simulation : Form
     {
         List<Order> ordered_list;
+        Logger logger = Logger.Instance;
+
         public Simulation()
         {
             InitializeComponent();
@@ -43,6 +46,7 @@ namespace PDFinalProject
             for (int i = 0; i < ordered_list.Count ; i++)
                 dataGridView.Rows[i].DefaultCellStyle.BackColor = my_green;
 
+            logger.Log("Simulation: Completed.");
             MessageBox.Show("Successful simulation. "+ Environment.NewLine +"Now, plase update your orders.");
 
             for (int i = 0; i < ordered_list.Count; i++)
@@ -52,7 +56,7 @@ namespace PDFinalProject
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void makeOrder(int i)

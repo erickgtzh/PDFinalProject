@@ -39,8 +39,19 @@ namespace PDFinalProject
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            logger.Log("Simulacion comenzada");
+            logger.Log("Simulation: started.");
             List<int> aux = new List<int>();
+            int frozen_veg_buses = Convert.ToInt32(comboBox_frozen_veg_buses.Text);
+            int sodas_buses = Convert.ToInt32(comboBox_sodas_buses.Text);
+            int bread_buses = Convert.ToInt32(comboBox_bread_buses.Text);
+
+            if (frozen_veg_buses > 0)
+                logger.Log( frozen_veg_buses + " frozen vegetable bus(es) added." );
+            if (sodas_buses > 0)
+                logger.Log(sodas_buses + " soda bus(es) added.");
+            if (bread_buses > 0)
+                logger.Log(bread_buses + " bread bus(es) added.");
+
             int sum = Convert.ToInt32(comboBox_frozen_veg_buses.Text) + Convert.ToInt32(comboBox_sodas_buses.Text) + Convert.ToInt32(comboBox_bread_buses.Text);
 
             int sum_tot = Convert.ToInt32(comboBox_frozen_veg_buses.Text) * 120 + Convert.ToInt32(comboBox_sodas_buses.Text) * 270 + Convert.ToInt32(comboBox_bread_buses.Text) * 95;
