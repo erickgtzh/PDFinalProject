@@ -60,18 +60,18 @@ namespace PDFinalProject
             this.Hide();
             OrderGenerator orderGenerator = new OrderGenerator();
             MakeAnOrder makeAnOrder = new MakeAnOrder();
-            makeAnOrder.setValues(ordered_list.ElementAt(i).Product1.Quantity, ordered_list.ElementAt(i).Product2.Quantity, ordered_list.ElementAt(i).Product3.Quantity);
+            makeAnOrder.setValues(ordered_list.ElementAt(i).products[0].quantity, ordered_list.ElementAt(i).products[1].quantity, ordered_list.ElementAt(i).products[2].quantity);
             makeAnOrder.ShowDialog();
 
             int[] array = makeAnOrder.getValues();
 
-            ordered_list.ElementAt(i).Product1.Quantity = array[0];
-            ordered_list.ElementAt(i).Product2.Quantity = array[1];
-            ordered_list.ElementAt(i).Product3.Quantity = array[2];
+            ordered_list.ElementAt(i).products[0].quantity = array[0];
+            ordered_list.ElementAt(i).products[1].quantity = array[1];
+            ordered_list.ElementAt(i).products[2].quantity = array[2];
 
-            String json = orderGenerator.createJson(ordered_list.ElementAt(i).IdStore, ordered_list.ElementAt(i).StoreName, array);
+            String json = orderGenerator.createJson(ordered_list.ElementAt(i).idStore, ordered_list.ElementAt(i).storeName, array);
             Console.WriteLine(json);
-            orderGenerator.Encoder(ordered_list.ElementAt(i).StoreName, json);
+            orderGenerator.Encoder(ordered_list.ElementAt(i).storeName, json);
             
         }
 

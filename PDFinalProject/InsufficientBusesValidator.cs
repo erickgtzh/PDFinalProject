@@ -65,9 +65,9 @@ namespace PDFinalProject
             errors = "";
             foreach (var i in orders)
             {
-                number_of_vegetables += i.Product1.Quantity;
-                number_of_sodas += i.Product2.Quantity;
-                number_of_bread += i.Product3.Quantity;
+                number_of_vegetables += i.products[0].quantity;
+                number_of_sodas += i.products[1].quantity;
+                number_of_bread += i.products[2].quantity;
             }
 
             if (number_of_vegetables > array[0] )

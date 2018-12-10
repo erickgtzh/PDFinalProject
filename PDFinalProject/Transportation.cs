@@ -80,36 +80,36 @@ namespace PDFinalProject
             {
                 for (int j = 0; j < orders.Count - 1; j++)
                 {
-                    double profit_j = orders.ElementAt(j).Product1.Quantity * vegetables_price +
-                                    orders.ElementAt(j).Product2.Quantity * sodas_price +
-                                    orders.ElementAt(j).Product3.Quantity * bread_price;
+                    double profit_j = orders.ElementAt(j).products[0].quantity * vegetables_price +
+                                    orders.ElementAt(j).products[1].quantity * sodas_price +
+                                    orders.ElementAt(j).products[2].quantity * bread_price;
 
-                    double profit_j_toCompare = orders.ElementAt(j + 1).Product1.Quantity * vegetables_price +
-                                                orders.ElementAt(j + 1).Product2.Quantity * sodas_price +
-                                                orders.ElementAt(j + 1).Product3.Quantity * bread_price;
+                    double profit_j_toCompare = orders.ElementAt(j + 1).products[0].quantity * vegetables_price +
+                                                orders.ElementAt(j + 1).products[1].quantity * sodas_price +
+                                                orders.ElementAt(j + 1).products[2].quantity * bread_price;
 
                     if (profit_j < profit_j_toCompare)
                     {
-                        int temp1 = orders.ElementAt(j).Product1.Quantity;
-                        int temp2 = orders.ElementAt(j).Product2.Quantity;
-                        int temp3 = orders.ElementAt(j).Product3.Quantity;
-                        string temp4 = orders.ElementAt(j).StoreName;
+                        int temp1 = orders.ElementAt(j).products[0].quantity;
+                        int temp2 = orders.ElementAt(j).products[1].quantity;
+                        int temp3 = orders.ElementAt(j).products[2].quantity;
+                        string temp4 = orders.ElementAt(j).storeName;
                         //int id = orders.ElementAt(j).IdStore;
 
-                        orders.ElementAt(j).Product1.Quantity = orders.ElementAt(j + 1).Product1.Quantity;
-                        orders.ElementAt(j).Product2.Quantity = orders.ElementAt(j + 1).Product2.Quantity;
-                        orders.ElementAt(j).Product3.Quantity = orders.ElementAt(j + 1).Product3.Quantity;
-                        orders.ElementAt(j).StoreName = orders.ElementAt(j + 1).StoreName;
+                        orders.ElementAt(j).products[0].quantity = orders.ElementAt(j + 1).products[0].quantity;
+                        orders.ElementAt(j).products[1].quantity = orders.ElementAt(j + 1).products[1].quantity;
+                        orders.ElementAt(j).products[2].quantity = orders.ElementAt(j + 1).products[2].quantity;
+                        orders.ElementAt(j).storeName = orders.ElementAt(j + 1).storeName;
                         //orders.ElementAt(j).IdStore = orders.ElementAt(j + 1).IdStore;
 
-                        orders.ElementAt(j + 1).Product1.Quantity = temp1;
-                        orders.ElementAt(j + 1).Product2.Quantity = temp2;
-                        orders.ElementAt(j + 1).Product3.Quantity = temp3;
-                        orders.ElementAt(j + 1).StoreName = temp4;
+                        orders.ElementAt(j + 1).products[0].quantity = temp1;
+                        orders.ElementAt(j + 1).products[1].quantity = temp2;
+                        orders.ElementAt(j + 1).products[2].quantity = temp3;
+                        orders.ElementAt(j + 1).storeName = temp4;
                         //orders.ElementAt(j + 1).IdStore = id;
                     }
                 }
-                orders.ElementAt(i).IdStore = i;
+                orders.ElementAt(i).idStore = i;
             }
             //foreach (var i in orders)
             //{
