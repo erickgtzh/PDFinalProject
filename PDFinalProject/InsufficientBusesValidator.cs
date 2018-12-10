@@ -52,9 +52,7 @@ namespace PDFinalProject
 
         public Boolean getProducts()
         {
-            
             OrderGenerator generator = new OrderGenerator();
-
             //Transportation transportation = new Transportation();
             //int[] array = transportation.getNumberOfBuses();
 

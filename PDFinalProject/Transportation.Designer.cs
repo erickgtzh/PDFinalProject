@@ -43,9 +43,10 @@ namespace PDFinalProject
             // 
             this.label_frozen_veg_transp.AutoSize = true;
             this.label_frozen_veg_transp.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.label_frozen_veg_transp.Location = new System.Drawing.Point(61, 59);
+            this.label_frozen_veg_transp.Location = new System.Drawing.Point(81, 73);
+            this.label_frozen_veg_transp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_frozen_veg_transp.Name = "label_frozen_veg_transp";
-            this.label_frozen_veg_transp.Size = new System.Drawing.Size(182, 21);
+            this.label_frozen_veg_transp.Size = new System.Drawing.Size(228, 25);
             this.label_frozen_veg_transp.TabIndex = 0;
             this.label_frozen_veg_transp.Text = "Frozen vegetables buses:";
             // 
@@ -53,9 +54,10 @@ namespace PDFinalProject
             // 
             this.label_sodas_transp.AutoSize = true;
             this.label_sodas_transp.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.label_sodas_transp.Location = new System.Drawing.Point(61, 140);
+            this.label_sodas_transp.Location = new System.Drawing.Point(81, 172);
+            this.label_sodas_transp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_sodas_transp.Name = "label_sodas_transp";
-            this.label_sodas_transp.Size = new System.Drawing.Size(158, 21);
+            this.label_sodas_transp.Size = new System.Drawing.Size(200, 25);
             this.label_sodas_transp.TabIndex = 2;
             this.label_sodas_transp.Text = "Sodas transportation:";
             // 
@@ -63,18 +65,20 @@ namespace PDFinalProject
             // 
             this.label_bread_transp.AutoSize = true;
             this.label_bread_transp.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.label_bread_transp.Location = new System.Drawing.Point(61, 242);
+            this.label_bread_transp.Location = new System.Drawing.Point(81, 298);
+            this.label_bread_transp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_bread_transp.Name = "label_bread_transp";
-            this.label_bread_transp.Size = new System.Drawing.Size(97, 21);
+            this.label_bread_transp.Size = new System.Drawing.Size(120, 25);
             this.label_bread_transp.TabIndex = 4;
             this.label_bread_transp.Text = "Bread buses:";
             // 
             // button_start_simulation
             // 
             this.button_start_simulation.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
-            this.button_start_simulation.Location = new System.Drawing.Point(326, 319);
+            this.button_start_simulation.Location = new System.Drawing.Point(420, 399);
+            this.button_start_simulation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_start_simulation.Name = "button_start_simulation";
-            this.button_start_simulation.Size = new System.Drawing.Size(110, 50);
+            this.button_start_simulation.Size = new System.Drawing.Size(147, 62);
             this.button_start_simulation.TabIndex = 6;
             this.button_start_simulation.Text = "Start Simulation";
             this.button_start_simulation.UseVisualStyleBackColor = true;
@@ -96,9 +100,10 @@ namespace PDFinalProject
             "1",
             "2",
             "3"});
-            this.comboBox_frozen_veg_buses.Location = new System.Drawing.Point(315, 56);
+            this.comboBox_frozen_veg_buses.Location = new System.Drawing.Point(420, 69);
+            this.comboBox_frozen_veg_buses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_frozen_veg_buses.Name = "comboBox_frozen_veg_buses";
-            this.comboBox_frozen_veg_buses.Size = new System.Drawing.Size(121, 29);
+            this.comboBox_frozen_veg_buses.Size = new System.Drawing.Size(160, 33);
             this.comboBox_frozen_veg_buses.TabIndex = 1;
             // 
             // comboBox_sodas_buses
@@ -117,9 +122,10 @@ namespace PDFinalProject
             "1",
             "2",
             "3"});
-            this.comboBox_sodas_buses.Location = new System.Drawing.Point(315, 137);
+            this.comboBox_sodas_buses.Location = new System.Drawing.Point(420, 169);
+            this.comboBox_sodas_buses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_sodas_buses.Name = "comboBox_sodas_buses";
-            this.comboBox_sodas_buses.Size = new System.Drawing.Size(121, 29);
+            this.comboBox_sodas_buses.Size = new System.Drawing.Size(160, 33);
             this.comboBox_sodas_buses.TabIndex = 3;
             // 
             // comboBox_bread_buses
@@ -138,16 +144,17 @@ namespace PDFinalProject
             "1",
             "2",
             "3"});
-            this.comboBox_bread_buses.Location = new System.Drawing.Point(315, 239);
+            this.comboBox_bread_buses.Location = new System.Drawing.Point(420, 294);
+            this.comboBox_bread_buses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_bread_buses.Name = "comboBox_bread_buses";
-            this.comboBox_bread_buses.Size = new System.Drawing.Size(121, 29);
+            this.comboBox_bread_buses.Size = new System.Drawing.Size(160, 33);
             this.comboBox_bread_buses.TabIndex = 5;
             // 
             // Transportation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 418);
+            this.ClientSize = new System.Drawing.Size(652, 514);
             this.Controls.Add(this.comboBox_bread_buses);
             this.Controls.Add(this.comboBox_sodas_buses);
             this.Controls.Add(this.comboBox_frozen_veg_buses);
@@ -156,15 +163,13 @@ namespace PDFinalProject
             this.Controls.Add(this.label_sodas_transp);
             this.Controls.Add(this.label_frozen_veg_transp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Transportation";
             this.Text = "Transportation";
             this.Load += new System.EventHandler(this.Transportation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            comboBox_frozen_veg_buses.Text = "0";
-            comboBox_sodas_buses.Text = "0";
-            comboBox_bread_buses.Text = "0";
         }
 
         #endregion

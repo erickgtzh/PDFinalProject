@@ -1,4 +1,5 @@
 ﻿
+using LoggerNamespace;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace PDFinalProject
         double vegetables_price = 18.5;
         double sodas_price = 7.0;
         double bread_price = 22.0;
+        Logger logger = Logger.Instance;
 
         public int Bus_quantities { get => bus_quantities; set => bus_quantities = value; }
         public double Vegetables_price { get => vegetables_price; set => vegetables_price = value; }
@@ -37,6 +39,7 @@ namespace PDFinalProject
 
         private void button_save_Click(object sender, EventArgs e)
         {
+            logger.Log("Simulacion comenzada");
             List<int> aux = new List<int>();
             int sum = Convert.ToInt32(comboBox_frozen_veg_buses.Text) + Convert.ToInt32(comboBox_sodas_buses.Text) + Convert.ToInt32(comboBox_bread_buses.Text);
 
