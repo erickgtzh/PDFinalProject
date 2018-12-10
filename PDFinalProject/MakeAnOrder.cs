@@ -55,8 +55,14 @@ namespace PDFinalProject
             Quantity1 = Convert.ToInt32(textBox_frozen_veg.Text);
             Quantity2 = Convert.ToInt32(textBox_sodas.Text);
             Quantity3 = Convert.ToInt32(textBox_bread.Text);
-            this.logger.Log("Se han creado productos");
-            this.logger.Log("Pedido finalizado");
+            if (Quantity1>0)
+                this.logger.Log(string.Format("{0} Frozen vegetables added", Quantity1));
+            if (Quantity2 > 0)
+                this.logger.Log(string.Format("{0} Sodas added", Quantity2));
+            if (Quantity3 > 0)
+                this.logger.Log(string.Format("{0} Bread added", Quantity3));
+            this.logger.Log("Products have been created");
+            this.logger.Log("Finished order");
             this.Hide();
         }
 

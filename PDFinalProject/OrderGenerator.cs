@@ -93,7 +93,7 @@ namespace PDFinalProject
             //MessageBox.Show(name+".png"+" saved.");
 
             //Console.WriteLine("Close");
-            logger.Log("Imagen creada");
+            logger.Log("Image created");
         }
 
         public void Decoder()
