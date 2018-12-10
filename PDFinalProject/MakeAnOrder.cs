@@ -56,7 +56,7 @@ namespace PDFinalProject
             Quantity2 = Convert.ToInt32(textBox_sodas.Text);
             Quantity3 = Convert.ToInt32(textBox_bread.Text);
             if (Quantity1>0)
-                this.logger.Log(string.Format("{0} Frozen vegetables added", Quantity1));
+                 this.logger.Log(string.Format("{0} Frozen vegetables added", Quantity1));
             if (Quantity2 > 0)
                 this.logger.Log(string.Format("{0} Sodas added", Quantity2));
             if (Quantity3 > 0)
