@@ -26,9 +26,6 @@ namespace LoggerNamespace
         
         private static Logger _instance = null;
 
-        // this field holds the log file stream
-        private Stream logStream = null;
-
         // this field holds the stream writer
         private StreamWriter streamWriter = null;
 

@@ -18,16 +18,12 @@ namespace PDFinalProject
     {
 
         public static List<Order> orders = new List<Order>();
-        Product product1;
-        Product product2;
-        Product product3;
         Order order;
         Logger logger = Logger.Instance;
 
         public OrderGenerator()
         {
             InitializeComponent();
-            //RefreshList(orders);
         }
 
         public static String[] GetFilesFrom(String searchFolder, String[] filters, bool isRecursive)
@@ -73,18 +69,10 @@ namespace PDFinalProject
 
         public void Encoder(String name, String json)
         {
-            //Console.WriteLine("Open");
             String path = @"Markets//" + name + ".png";
             QREncoder QRCodeEncoder = new QREncoder();
             QRCodeEncoder.Encode(ErrorCorrection.M, json);
             Bitmap QRCodeImage = new Bitmap(QRCodeToBitmap.CreateBitmap(QRCodeEncoder, 4, 8));
-            //System.IO.File.Delete(path);
-
-            //if (File.Exists(path))
-            //{
-            //    File.Delete(path);
-            //}
-            //FileShare.Write(@"Markets//" + name + ".png",FileMode.Create);
             using (FileStream FS = new FileStream(path, FileMode.Create))
             {
                 QRCodeImage.Save(FS, ImageFormat.Png);
@@ -93,7 +81,7 @@ namespace PDFinalProject
             //MessageBox.Show(name+".png"+" saved.");
 
             //Console.WriteLine("Close");
-            logger.Log("Image created");
+            logger.Log("Imagen creada");
         }
 
         public void Decoder()
@@ -147,10 +135,8 @@ namespace PDFinalProject
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(Convert.ToString(e.ColumnIndex));
             if (e.ColumnIndex == 2 || e.ColumnIndex == 1 || e.ColumnIndex == 0)
             {
-                //MessageBox.Show(Convert.ToString(e.RowIndex));
                 this.Hide();
 
                 MakeAnOrder makeAnOrder = new MakeAnOrder();
@@ -162,24 +148,9 @@ namespace PDFinalProject
                 for(int i =0; i < orders.ElementAt(e.RowIndex).products.Count; i++)
                     orders.ElementAt(e.RowIndex).products[i].quantity = array[i];
 
-                //product1 = new Product(1, "Frozen vegetables", array[0]);
-                //product2 = new Product(2, "Sodas", array[1]);
-                //product3 = new Product(3, "Bread", array[2]);
-
-                //order = new Order(orders.ElementAt(e.RowIndex).IdStore, orders.ElementAt(e.RowIndex).StoreName, product1, product2, product3);
-
                 String json = createJson(orders.ElementAt(e.RowIndex).idStore, orders.ElementAt(e.RowIndex).storeName, array );
-                //Console.WriteLine(orders.ElementAt(e.RowIndex).StoreName);
                 Encoder(orders.ElementAt(e.RowIndex).storeName, json);
 
-                //RefreshList(orders);
-                //for (int i = 0; i < array.Length; i++)
-                //    Console.WriteLine(array[i]);
-                //Console.WriteLine(Convert.ToString(orders.ElementAt(e.RowIndex).Product1.Quantity));
-                //Console.WriteLine(Convert.ToString(orders.ElementAt(e.RowIndex).Product2.Quantity));
-                //Console.WriteLine(Convert.ToString(orders.ElementAt(e.RowIndex).Product3.Quantity));
-
-                //makeAnOrder.setValues();    
                 this.Show();
             }
         }
@@ -204,9 +175,6 @@ namespace PDFinalProject
             this.Hide();
             Transportation transportation = new Transportation();
             transportation.ShowDialog();
-            //dataGridView.Clear();
-            //dataGridView.Rows.Clear();
-            //dataGridView.Refresh();
             RefreshList(orders);
             this.Show();
         }
