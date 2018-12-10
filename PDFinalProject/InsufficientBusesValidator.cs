@@ -11,7 +11,6 @@ namespace PDFinalProject
         Boolean flag = true;
         private Validator next;
         List<Order> orders = new List<Order>();
-        String to_Ret = "";
         int[] array = new int[3];
 
         public int[] Array { get => array; set => array = value; }

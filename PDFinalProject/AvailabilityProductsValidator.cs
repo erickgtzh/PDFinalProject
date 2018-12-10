@@ -9,7 +9,6 @@ namespace PDFinalProject
     class AvailabilityProductsValidator : Validator
     {
         private Validator next;
-        String to_Ret = "";
 
         public override Validator getNext()
         {
