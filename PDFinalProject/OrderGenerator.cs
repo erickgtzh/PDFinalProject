@@ -78,6 +78,9 @@ namespace PDFinalProject
                 QRCodeImage.Save(FS, ImageFormat.Png);
             }
 
+            //MessageBox.Show(name+".png"+" saved.");
+
+            //Console.WriteLine("Close");
             logger.Log("Imagen creada");
         }
 
