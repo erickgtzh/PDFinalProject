@@ -41,6 +41,7 @@
             // 
             this.lbl_frozen_veg.AutoSize = true;
             this.lbl_frozen_veg.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_frozen_veg.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_frozen_veg.Location = new System.Drawing.Point(46, 54);
             this.lbl_frozen_veg.Name = "lbl_frozen_veg";
             this.lbl_frozen_veg.Size = new System.Drawing.Size(138, 21);
@@ -51,6 +52,7 @@
             // 
             this.lbl_sodas.AutoSize = true;
             this.lbl_sodas.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sodas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_sodas.Location = new System.Drawing.Point(46, 128);
             this.lbl_sodas.Name = "lbl_sodas";
             this.lbl_sodas.Size = new System.Drawing.Size(55, 21);
@@ -61,6 +63,7 @@
             // 
             this.lbl_bread.AutoSize = true;
             this.lbl_bread.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_bread.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_bread.Location = new System.Drawing.Point(46, 205);
             this.lbl_bread.Name = "lbl_bread";
             this.lbl_bread.Size = new System.Drawing.Size(53, 21);
@@ -93,19 +96,22 @@
             // 
             // button_save
             // 
+            this.button_save.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button_save.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_save.Location = new System.Drawing.Point(234, 274);
+            this.button_save.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_save.Location = new System.Drawing.Point(244, 275);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(99, 35);
+            this.button_save.Size = new System.Drawing.Size(89, 47);
             this.button_save.TabIndex = 6;
             this.button_save.Text = "Save";
-            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // MakeAnOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(390, 359);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.textBox_bread);

@@ -77,13 +77,15 @@
             // 
             // button_simulation
             // 
+            this.button_simulation.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button_simulation.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.button_simulation.ForeColor = System.Drawing.SystemColors.Control;
             this.button_simulation.Location = new System.Drawing.Point(634, 316);
             this.button_simulation.Name = "button_simulation";
             this.button_simulation.Size = new System.Drawing.Size(104, 55);
             this.button_simulation.TabIndex = 2;
             this.button_simulation.Text = "Simulation";
-            this.button_simulation.UseVisualStyleBackColor = true;
+            this.button_simulation.UseVisualStyleBackColor = false;
             this.button_simulation.Click += new System.EventHandler(this.button_simulation_Click);
             // 
             // textBox1
@@ -97,56 +99,65 @@
             // 
             // File
             // 
+            this.File.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.File.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.File.ForeColor = System.Drawing.SystemColors.Control;
             this.File.Location = new System.Drawing.Point(634, 40);
             this.File.Margin = new System.Windows.Forms.Padding(2);
             this.File.Name = "File";
             this.File.Size = new System.Drawing.Size(104, 66);
             this.File.TabIndex = 4;
             this.File.Text = "File";
-            this.File.UseVisualStyleBackColor = true;
+            this.File.UseVisualStyleBackColor = false;
             this.File.Click += new System.EventHandler(this.File_Click);
             // 
             // DataGrid
             // 
+            this.DataGrid.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.DataGrid.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.DataGrid.ForeColor = System.Drawing.SystemColors.Control;
             this.DataGrid.Location = new System.Drawing.Point(634, 120);
             this.DataGrid.Margin = new System.Windows.Forms.Padding(2);
             this.DataGrid.Name = "DataGrid";
             this.DataGrid.Size = new System.Drawing.Size(104, 64);
             this.DataGrid.TabIndex = 5;
             this.DataGrid.Text = "DataGrid";
-            this.DataGrid.UseVisualStyleBackColor = true;
+            this.DataGrid.UseVisualStyleBackColor = false;
             this.DataGrid.Click += new System.EventHandler(this.DataGrid_Click);
             // 
             // Textbox
             // 
+            this.Textbox.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Textbox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.Textbox.ForeColor = System.Drawing.SystemColors.Control;
             this.Textbox.Location = new System.Drawing.Point(634, 200);
             this.Textbox.Margin = new System.Windows.Forms.Padding(2);
             this.Textbox.Name = "Textbox";
             this.Textbox.Size = new System.Drawing.Size(104, 66);
             this.Textbox.TabIndex = 6;
             this.Textbox.Text = "TextBox";
-            this.Textbox.UseVisualStyleBackColor = true;
+            this.Textbox.UseVisualStyleBackColor = false;
             this.Textbox.Click += new System.EventHandler(this.Textbox_Click);
             // 
             // button_update
             // 
+            this.button_update.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button_update.Font = new System.Drawing.Font("Microsoft Tai Le", 12F);
+            this.button_update.ForeColor = System.Drawing.SystemColors.Control;
             this.button_update.Location = new System.Drawing.Point(777, 439);
             this.button_update.Margin = new System.Windows.Forms.Padding(2);
             this.button_update.Name = "button_update";
             this.button_update.Size = new System.Drawing.Size(101, 49);
             this.button_update.TabIndex = 7;
             this.button_update.Text = "Update";
-            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.UseVisualStyleBackColor = false;
             this.button_update.Click += new System.EventHandler(this.actualizar_Click);
             // 
             // OrderGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1028, 503);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.Textbox);
