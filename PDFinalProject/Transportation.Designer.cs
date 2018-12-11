@@ -105,6 +105,7 @@ namespace PDFinalProject
             this.comboBox_frozen_veg_buses.Name = "comboBox_frozen_veg_buses";
             this.comboBox_frozen_veg_buses.Size = new System.Drawing.Size(160, 33);
             this.comboBox_frozen_veg_buses.TabIndex = 1;
+            this.comboBox_frozen_veg_buses.Text = "0";
             // 
             // comboBox_sodas_buses
             // 
@@ -127,6 +128,7 @@ namespace PDFinalProject
             this.comboBox_sodas_buses.Name = "comboBox_sodas_buses";
             this.comboBox_sodas_buses.Size = new System.Drawing.Size(160, 33);
             this.comboBox_sodas_buses.TabIndex = 3;
+            this.comboBox_sodas_buses.Text = "0";
             // 
             // comboBox_bread_buses
             // 
@@ -149,6 +151,7 @@ namespace PDFinalProject
             this.comboBox_bread_buses.Name = "comboBox_bread_buses";
             this.comboBox_bread_buses.Size = new System.Drawing.Size(160, 33);
             this.comboBox_bread_buses.TabIndex = 5;
+            this.comboBox_bread_buses.Text = "0";
             // 
             // Transportation
             // 

@@ -38,9 +38,10 @@ namespace PDFinalProject
             array[1] = to_validate[3];
             array[2] = to_validate[4];
 
-            if (getProducts())
+            if (!getProducts())
             {
-                Console.WriteLine("Handled by InsufficientBusesValidator");
+                //Console.WriteLine("Handled by InsufficientBusesValidator");
+                errors = "";
             }
             else if (next != null)
             {

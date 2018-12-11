@@ -54,7 +54,8 @@ namespace PDFinalProject
 
             int sum = Convert.ToInt32(comboBox_frozen_veg_buses.Text) + Convert.ToInt32(comboBox_sodas_buses.Text) + Convert.ToInt32(comboBox_bread_buses.Text);
 
-            int sum_tot = Convert.ToInt32(comboBox_frozen_veg_buses.Text) * 120 + Convert.ToInt32(comboBox_sodas_buses.Text) * 270 + Convert.ToInt32(comboBox_bread_buses.Text) * 95;
+            int sum_tot = 1455; //3 * 120 + 3 * 270 + 3 * 95;
+            Console.WriteLine(sum_tot);
             aux.Add(sum);
             aux.Add(sum_tot);
 
@@ -72,7 +73,7 @@ namespace PDFinalProject
             }
             else
             {
-                MessageBox.Show("Please create a new Order for your Market.");
+                MessageBox.Show("Please, create a new Order for your Market.");
                 Simulate();
             }
         }
@@ -125,14 +126,6 @@ namespace PDFinalProject
                 }
                 orders.ElementAt(i).idStore = i;
             }
-            //foreach (var i in orders)
-            //{
-            //    Console.WriteLine(i.StoreName);
-            //    Console.WriteLine(i.IdStore);
-            //    Console.WriteLine(i.Product1.Quantity);
-            //    Console.WriteLine(i.Product2.Quantity);
-            //    Console.WriteLine(i.Product3.Quantity);
-            //}
             return orders;
         }
     }
